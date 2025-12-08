@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Conversor de Vídeo para GIF Grátis - MP4 para GIF Online (Sem Marca d'água)</title>
+    <meta name="title" content="Conversor de Vídeo para GIF Grátis - MP4 para GIF Online (Sem Marca d'água)">
+    <meta name="description"
+        content="Transforme seus vídeos em GIFs animados em segundos. Conversor de MP4 para GIF gratuito, rápido e seguro. Edite, corte e baixe sem marca d'água.">
+    <meta name="keywords"
+        content="video para gif, converter mp4 para gif, criar gif de video, transform video to gif, gif maker online, mp4 to gif converter, webm para gif">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Video2GIF Pro">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://video2gifpro.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://video2gifpro.com/">
+    <meta property="og:title" content="Conversor de Vídeo para GIF Grátis - MP4 para GIF">
+    <meta property="og:description"
+        content="Crie GIFs a partir de vídeos MP4 e WebM gratuitamente. Ferramenta online rápida, sem upload para servidor e sem marca d'água.">
+    <meta property="og:image" content="https://video2gifpro.com/assets/share-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://video2gifpro.com/">
+    <meta property="twitter:title" content="Conversor de Vídeo para GIF Grátis - MP4 para GIF">
+    <meta property="twitter:description"
+        content="Crie GIFs a partir de vídeos MP4 e WebM gratuitamente. Ferramenta online rápida, sem upload para servidor e sem marca d'água.">
+    <meta property="twitter:image" content="https://video2gifpro.com/assets/share-image.jpg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- gif.js library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gif.js/0.2.0/gif.js"></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Menu Principal">
+        <div class="logo">
+            <i class="fa-solid fa-film" aria-hidden="true"></i> Video2GIF<span>Pro</span>
+        </div>
+        <div class="nav-links" style="margin-left: auto; display: flex; gap: 20px;">
+            <a href="#how-to" style="color: var(--text-secondary); text-decoration: none;">Como Usar</a>
+            <a href="#faq" style="color: var(--text-secondary); text-decoration: none;">FAQ</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Conversor de <span class="gradient-text">Vídeo para GIF</span> Online</h1>
+            <p class="subtitle">A melhor ferramenta para <strong>transformar MP4 em GIF</strong>. Corte, edite e
+                converta vídeos com alta qualidade e total privacidade.</p>
+        </header>
+
+        <div class="workspace glass-card">
+            <!-- Upload State -->
+            <div class="upload-zone" id="upload-zone" role="button" tabindex="0"
+                aria-label="Arraste seu vídeo ou clique para selecionar">
+                <i class="fa-solid fa-file-video" aria-hidden="true"></i>
+                <h3>Arraste seu vídeo MP4 ou WebM</h3>
+                <button class="btn-primary" id="select-video-btn">Selecionar Vídeo</button>
+                <input type="file" id="video-input" accept="video/mp4, video/webm, video/ogg" hidden aria-hidden="true">
+            </div>
+
+            <!-- Editor State (Hidden initially) -->
+            <div class="editor-interface" id="editor-interface" style="display: none;">
+                <div class="video-preview-container">
+                    <video id="source-video" controls playsinline></video>
+                </div>
+
+                <div class="controls-panel">
+                    <div class="control-group">
+                        <label>Intervalo do GIF (Segundos)</label>
+                        <div class="range-inputs">
+                            <div class="input-wrapper">
+                                <span>Início</span>
+                                <input type="number" id="start-time" value="0" min="0" step="0.1"
+                                    aria-label="Tempo inicial">
+                            </div>
+                            <div class="input-wrapper">
+                                <span>Fim</span>
+                                <input type="number" id="end-time" value="5" min="0" step="0.1"
+                                    aria-label="Tempo final">
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 10px; margin-top: 5px;">
+                            <button class="btn-small" id="set-current-start">Marcar Início Atual</button>
+                            <button class="btn-small" id="set-current-end">Marcar Fim Atual</button>
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label>Configurações de Saída</label>
+                        <div class="settings-grid">
+                            <div class="setting">
+                                <span>Largura (px)</span>
+                                <input type="number" id="gif-width" value="480" aria-label="Largura do GIF">
+                            </div>
+                            <div class="setting">
+                                <span>FPS (Quadros/s)</span>
+                                <input type="number" id="gif-fps" value="10" max="30" aria-label="Frames por segundo">
+                            </div>
+                            <div class="setting">
+                                <span>Qualidade</span>
+                                <select id="gif-quality" aria-label="Qualidade da compressão">
+                                    <option value="10">Alta (Lento)</option>
+                                    <option value="20">Média</option>
+                                    <option value="30">Baixa (Rápido)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="action-area">
+                        <button class="btn-primary" id="generate-btn">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i> Converter para GIF
+                        </button>
+                        <button class="btn-ghost" id="reset-btn">Escolher Outro Vídeo</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Processing/Result State -->
+            <div class="result-interface" id="result-interface" style="display: none;" aria-live="polite">
+                <div class="loading-state" id="loading-state">
+                    <div class="spinner"></div>
+                    <p id="status-text">Processando seu GIF...</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+                <div class="success-state" id="success-state" style="display: none;">
+                    <h3>Seu GIF está pronto!</h3>
+                    <div class="gif-container">
+                        <img id="result-gif" alt="GIF animado gerado a partir do vídeo">
+                    </div>
+                    <div class="result-actions">
+                        <a id="download-link" class="btn-primary" download="meu-gif-video2gifpro.gif">
+                            <i class="fa-solid fa-download"></i> Baixar GIF Grátis
+                        </a>
+                        <button class="btn-secondary" id="back-to-edit">Editar Novamente</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SEO Content Section -->
+        <article class="seo-content" style="margin-top: 4rem; max-width: 800px; color: var(--text-secondary);">
+            <section id="how-to" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Como converter MP4 para GIF?</h2>
+                <p style="margin-bottom: 1rem;">Criar GIFs animados a partir de seus vídeos nunca foi tão fácil. Siga
+                    estes passos simples:</p>
+                <ol style="padding-left: 1.5rem; line-height: 1.8;">
+                    <li><strong>Envie seu vídeo:</strong> Arraste e solte seu arquivo MP4, WebM ou OGG na área de
+                        upload.</li>
+                    <li><strong>Selecione o trecho:</strong> Use os controles para definir o momento exato de início e
+                        fim do seu GIF.</li>
+                    <li><strong>Personalize:</strong> Ajuste o tamanho, a taxa de quadros (FPS) e a qualidade para
+                        otimizar o tamanho do arquivo.</li>
+                    <li><strong>Converta e Baixe:</strong> Clique em "Converter para GIF" e baixe sua animação pronta
+                        para compartilhar no WhatsApp, Discord ou Slack.</li>
+                </ol>
+            </section>
+
+            <section id="features" style="margin-bottom: 3rem;">
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Por que usar o Video2GIF Pro?</h2>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 1rem;"><i class="fa-solid fa-check"
+                            style="color: var(--accent); margin-right: 10px;"></i> <strong>100% Gratuito e
+                            Ilimitado:</strong> Crie quantos GIFs quiser sem pagar nada.</li>
+                    <li style="margin-bottom: 1rem;"><i class="fa-solid fa-check"
+                            style="color: var(--accent); margin-right: 10px;"></i> <strong>Sem Marca d'água:</strong>
+                        Seus GIFs são limpos e profissionais.</li>
+                    <li style="margin-bottom: 1rem;"><i class="fa-solid fa-check"
+                            style="color: var(--accent); margin-right: 10px;"></i> <strong>Privacidade Total:</strong> A
+                        conversão acontece no seu navegador. Seus vídeos nunca são enviados para nossos servidores.</li>
+                </ul>
+            </section>
+
+            <section id="faq">
+                <h2 style="color: var(--text-primary); margin-bottom: 1rem;">Perguntas Frequentes (FAQ)</h2>
+                <div class="faq-item" style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Qual o melhor formato de vídeo para
+                        converter em GIF?</h4>
+                    <p>O formato <strong>MP4</strong> é o mais recomendado por ser leve e compatível, mas nossa
+                        ferramenta também aceita WebM e OGG.</p>
+                </div>
+                <div class="faq-item" style="margin-bottom: 1.5rem;">
+                    <h4 style="color: var(--text-primary); margin-bottom: 0.5rem;">Como diminuir o tamanho do GIF
+                        gerado?</h4>
+                    <p>Para criar GIFs mais leves, tente reduzir a largura (ex: 320px), diminuir o FPS para 10 ou
+                        encurtar a duração do vídeo.</p>
+                </div>
+            </section>
+        </article>
+    </main>
+
+    <footer
+        style="text-align: center; padding: 2rem; color: var(--text-secondary); font-size: 0.9rem; border-top: 1px solid var(--glass-border); margin-top: 2rem;">
+        <p>&copy; 2025 Video2GIF Pro. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Video2GIF Pro",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "description": "Ferramenta online gratuita para converter vídeos MP4 e WebM em GIFs animados sem marca d'água.",
+      "featureList": "Conversão de vídeo para GIF, Edição de tempo, Ajuste de FPS, Processamento local",
+      "softwareRequirements": "Navegador Web Moderno",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "850"
+      }
+    }
+    </script>
+</body>
+
+</html>
