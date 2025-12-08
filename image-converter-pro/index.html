@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Conversor de Imagem Online Grátis - PNG, JPG, WEBP (Sem Instalação)</title>
+    <meta name="title" content="Conversor de Imagem Online Grátis - PNG, JPG, WEBP (Sem Instalação)">
+    <meta name="description"
+        content="Converta imagens online gratuitamente. Transforme PNG em JPG, WEBP em PNG e muito mais. Rápido, seguro e sem marca d'água.">
+    <meta name="keywords"
+        content="conversor de imagem, converter png para jpg, converter webp para png, transformar foto, conversor online gratis, image converter">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="Image Converter Pro">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://imageconverterpro.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://imageconverterpro.com/">
+    <meta property="og:title" content="Conversor de Imagem Online Grátis - PNG, JPG, WEBP">
+    <meta property="og:description"
+        content="Converta suas imagens em segundos. Suporta JPG, PNG e WEBP. Processamento 100% no navegador.">
+    <meta property="og:image" content="https://imageconverterpro.com/assets/share-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://imageconverterpro.com/">
+    <meta property="twitter:title" content="Conversor de Imagem Online Grátis - PNG, JPG, WEBP">
+    <meta property="twitter:description"
+        content="Converta suas imagens em segundos. Suporta JPG, PNG e WEBP. Processamento 100% no navegador.">
+    <meta property="twitter:image" content="https://imageconverterpro.com/assets/share-image.jpg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Menu Principal">
+        <div class="logo">
+            <i class="fa-solid fa-rotate"></i> ImageConverter<span>Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#how-to">Como funciona</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Converta Imagens com <span class="gradient-text">Qualidade Profissional</span></h1>
+            <p class="subtitle">A ferramenta mais rápida para transformar <strong>PNG em JPG</strong>, <strong>WEBP em
+                    PNG</strong> e muito mais. Gratuito e ilimitado.</p>
+        </header>
+
+        <section class="upload-section" aria-label="Área de Upload">
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0"
+                aria-label="Arraste imagens ou clique para selecionar">
+                <div class="icon-container">
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
+                </div>
+                <h3>Arraste e solte suas imagens aqui</h3>
+                <p>ou</p>
+                <button class="btn-primary" id="select-files-btn">Selecionar Arquivos</button>
+                <input type="file" id="file-input" multiple accept="image/png, image/jpeg, image/webp" hidden
+                    aria-hidden="true">
+                <p class="file-info">Suporta JPG, PNG, WEBP</p>
+            </div>
+
+            <div class="settings-panel glass-card">
+                <div class="setting-item">
+                    <label for="output-format">Converter para:</label>
+                    <select id="output-format" aria-label="Selecionar formato de saída">
+                        <option value="image/jpeg">JPG (JPEG)</option>
+                        <option value="image/png">PNG (Transparente)</option>
+                        <option value="image/webp">WEBP (Moderno)</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;" aria-live="polite">
+            <h2>Imagens Convertidas</h2>
+            <div class="file-list" id="file-list">
+                <!-- Items will be added here via JS -->
+            </div>
+            <div class="actions-bar">
+                <button class="btn-ghost" id="clear-all-btn">Limpar Tudo</button>
+            </div>
+        </section>
+
+        <section class="features" id="features" aria-label="Recursos Principais">
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                <h3>Privacidade Total</h3>
+                <p>A conversão é feita no seu navegador. Suas fotos nunca são enviadas para a nuvem.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <h3>Instantâneo</h3>
+                <p>Sem filas, sem espera. Converta dezenas de imagens em segundos.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <h3>Alta Qualidade</h3>
+                <p>Mantemos a máxima fidelidade visual durante a conversão de formatos.</p>
+            </div>
+        </section>
+
+        <!-- SEO Content Section -->
+        <article class="seo-content" id="how-to">
+            <h2>Como converter imagens online?</h2>
+            <p>Precisa transformar aquela imagem WEBP em JPG para usar no seu site? Ou converter um PNG pesado para JPG?
+                O <strong>Image Converter Pro</strong> resolve isso em 3 passos:</p>
+            <ol>
+                <li><strong>Escolha suas imagens:</strong> Arraste os arquivos para a área de destaque acima.</li>
+                <li><strong>Selecione o formato:</strong> Escolha entre JPG, PNG ou WEBP no menu de opções.</li>
+                <li><strong>Baixe pronto:</strong> A conversão é automática. Basta clicar no botão de download.</li>
+            </ol>
+
+            <h3>Por que converter para WEBP?</h3>
+            <p>O formato <strong>WEBP</strong> é a recomendação moderna do Google para sites. Ele oferece qualidade
+                superior ao JPG com um tamanho de arquivo muito menor, fazendo seu site carregar mais rápido.</p>
+        </article>
+
+        <section class="seo-content" id="faq">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <h4>Posso converter várias imagens de uma vez?</h4>
+                <p>Sim! Nossa ferramenta suporta processamento em lote. Você pode selecionar dezenas de imagens e
+                    converter todas simultaneamente.</p>
+            </div>
+            <div class="faq-item">
+                <h4>A qualidade da imagem diminui?</h4>
+                <p>Ao converter para formatos com perdas (como JPG), pode haver uma mínima alteração, mas ajustamos para
+                    manter a qualidade visualmente idêntica (90%). Conversões para PNG são sem perdas (lossless).</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Image Converter Pro. Ferramenta gratuita de conversão.</p>
+    </footer>
+
+    <script src="script.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Image Converter Pro",
+      "applicationCategory": "PhotoEditor",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "description": "Conversor de imagens online gratuito. Converta PNG, JPG e WEBP rapidamente no navegador.",
+      "featureList": "Conversão de formato, Processamento em lote, Suporte a WEBP",
+      "softwareRequirements": "Navegador Web Moderno"
+    }
+    </script>
+</body>
+
+</html>

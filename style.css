@@ -204,6 +204,11 @@ body {
     color: var(--accent-rose);
 }
 
+.icon-violet {
+    background: rgba(139, 92, 246, 0.1);
+    color: #8b5cf6;
+}
+
 .icon-gray {
     background: rgba(148, 163, 184, 0.1);
     color: var(--text-secondary);

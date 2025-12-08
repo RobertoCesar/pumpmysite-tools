@@ -88,6 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Por favor, envie um arquivo de vídeo válido.');
             return;
         }
+
+        // Limit: 50MB
+        const maxSize = 50 * 1024 * 1024;
+        if (file.size > maxSize) {
+            alert('O arquivo é muito grande (>50MB). Para garantir a performance do navegador, por favor use um vídeo menor.');
+            return;
+        }
+
         uploadedFile = file;
         const url = URL.createObjectURL(file);
         videoElement.src = url;
@@ -109,8 +117,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const duration = endTime - startTime;
+
+        // Limit: 20 seconds
         if (duration > 20) {
-            if (!confirm('GIFs longos (>20s) podem demorar muito e travar o navegador. Deseja continuar?')) return;
+            alert(`O intervalo selecionado (${duration.toFixed(1)}s) é muito longo. O limite para GIFs é de 20 segundos para evitar travamentos.`);
+            return;
         }
 
         // Switch UI
