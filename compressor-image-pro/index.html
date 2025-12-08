@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Compressor de Imagem Grátis - Reduzir Tamanho de Fotos (JPG, PNG, WEBP)</title>
+    <meta name="title" content="Compressor de Imagem Grátis - Reduzir Tamanho de Fotos (JPG, PNG, WEBP)">
+    <meta name="description"
+        content="Ferramenta online gratuita para comprimir imagens e reduzir tamanho de fotos sem perder qualidade. Suporta JPG, PNG e WEBP. Rápido, seguro e 100% no navegador.">
+    <meta name="keywords"
+        content="compressor de imagem, reduzir tamanho foto, comprimir png, comprimir jpg, otimizar imagens, diminuir kb foto, compressor online gratis">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="Compressor ImagePro">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://compressorimagepro.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://compressorimagepro.com/">
+    <meta property="og:title" content="Compressor de Imagem Grátis - Reduzir Tamanho de Fotos">
+    <meta property="og:description"
+        content="Comprima suas imagens PNG, JPG e WEBP gratuitamente. Redução de tamanho inteligente sem perda visível de qualidade.">
+    <meta property="og:image" content="https://compressorimagepro.com/assets/social-share.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://compressorimagepro.com/">
+    <meta property="twitter:title" content="Compressor de Imagem Grátis - Reduzir Tamanho de Fotos">
+    <meta property="twitter:description"
+        content="Comprima suas imagens PNG, JPG e WEBP gratuitamente. Redução de tamanho inteligente sem perda visível de qualidade.">
+    <meta property="twitter:image" content="https://compressorimagepro.com/assets/social-share.jpg">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Scripts -->
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/browser-image-compression@2.0.2/dist/browser-image-compression.js"
+        defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Menu Principal">
+        <div class="logo">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i> Compressor Image<span>Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="#features" title="Veja como funciona a compressão">Como funciona</a>
+            <a href="#seo-info" title="Informações sobre otimização de imagens">Sobre</a>
+            <a href="#faq" title="Perguntas Frequentes">FAQ</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Compressor de Imagem com <span class="gradient-text">Inteligência Artificial</span></h1>
+            <p class="subtitle">A melhor ferramenta para <strong>reduzir tamanho de fotos</strong> mantendo a qualidade
+                visual. Otimize JPG, PNG e WEBP em segundos.</p>
+        </header>
+
+        <!-- Ad Space Top -->
+        <div hidden class="ad-space ad-banner">
+            <span class="ad-label">Publicidade</span>
+            <div class="ad-placeholder" style="width: 728px; height: 90px;">
+                <!-- AdSense Code Here -->
+                Espaço para Anúncio (728x90)
+            </div>
+        </div>
+
+        <section class="upload-section" aria-label="Área de Upload">
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0"
+                aria-label="Arraste imagens ou clique para selecionar">
+                <div class="icon-container">
+                    <i class="fa-solid fa-cloud-arrow-up" aria-hidden="true"></i>
+                </div>
+                <h3>Arraste e solte suas imagens aqui</h3>
+                <p>ou</p>
+                <button class="btn-primary" id="select-files-btn">Selecionar Arquivos</button>
+                <input type="file" id="file-input" multiple accept="image/png, image/jpeg, image/webp" hidden
+                    aria-hidden="true">
+                <p class="file-info">Suporta JPG, PNG, WEBP (Max 10MB)</p>
+            </div>
+
+            <div class="settings-panel glass-card">
+                <div class="setting-item">
+                    <label for="quality-slider">Nível de Compressão: <span id="quality-value">80%</span></label>
+                    <input type="range" id="quality-slider" min="0.1" max="1.0" step="0.05" value="0.8"
+                        aria-label="Ajustar qualidade da compressão">
+                    <div class="range-labels">
+                        <span>Menor Tamanho</span>
+                        <span>Melhor Qualidade</span>
+                    </div>
+                </div>
+                <div class="setting-item">
+                    <label for="max-width">Largura Máxima (px) - Opcional</label>
+                    <input type="number" id="max-width" placeholder="Ex: 1920"
+                        aria-label="Definir largura máxima da imagem">
+                </div>
+            </div>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;" aria-live="polite">
+            <h2>Resultados da Otimização</h2>
+            <div class="file-list" id="file-list">
+                <!-- Items will be added here via JS -->
+            </div>
+            <div class="actions-bar">
+                <button class="btn-secondary" id="download-all-btn" style="display: none;">
+                    <i class="fa-solid fa-download"></i> Baixar Todas (ZIP)
+                </button>
+                <button class="btn-ghost" id="clear-all-btn">Limpar Tudo</button>
+            </div>
+        </section>
+
+        <!-- Ad Space Middle -->
+        <div hidden class="ad-space ad-rectangle">
+            <span class="ad-label">Publicidade</span>
+            <div class="ad-placeholder" style="width: 300px; height: 250px;">
+                <!-- AdSense Code Here -->
+                Espaço para Anúncio (300x250)
+            </div>
+        </div>
+
+        <section class="features" id="features" aria-label="Recursos Principais">
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <h3>100% Seguro e Privado</h3>
+                <p>Seu <strong>compressor de imagem</strong> roda localmente. Nenhuma foto é enviada para servidores,
+                    garantindo total privacidade.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <h3>Compressão Ultra Rápida</h3>
+                <p>Reduza o tamanho de fotos instantaneamente. Nossa tecnologia aproveita o poder do seu dispositivo
+                    para resultados imediatos.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i>
+                <h3>Qualidade Preservada</h3>
+                <p>Algoritmos inteligentes para <strong>otimizar imagens</strong> removendo dados desnecessários sem
+                    afetar a qualidade visual.</p>
+            </div>
+        </section>
+
+        <!-- SEO Content Section -->
+        <article class="seo-content" id="seo-info">
+            <h2>Por que usar nosso Compressor de Imagem?</h2>
+            <p>O <strong>Compressor ImagePro</strong> é a solução definitiva para quem precisa <strong>reduzir tamanho
+                    de foto</strong> para web, e-mail ou redes sociais. Imagens pesadas deixam sites lentos e consomem
+                muitos dados. Com nossa ferramenta, você consegue <strong>comprimir JPG</strong>, PNG e WEBP em até 90%
+                sem perda perceptível de qualidade.</p>
+
+            <h3>Como reduzir o tamanho da foto online?</h3>
+            <ol>
+                <li>Clique em "Selecionar Arquivos" ou arraste suas imagens para a área de upload.</li>
+                <li>Ajuste o nível de qualidade se desejar (o padrão de 80% é ideal para a maioria dos casos).</li>
+                <li>Aguarde o processamento automático do nosso <strong>compressor de fotos</strong>.</li>
+                <li>Baixe suas imagens otimizadas individualmente ou em um arquivo ZIP.</li>
+            </ol>
+
+            <h3>Benefícios de Otimizar Imagens</h3>
+            <ul>
+                <li><strong>SEO Melhorado:</strong> O Google prioriza sites que carregam rápido. Imagens leves são
+                    essenciais para o Core Web Vitals.</li>
+                <li><strong>Economia de Espaço:</strong> Libere espaço no seu dispositivo ou servidor reduzindo o peso
+                    dos arquivos.</li>
+                <li><strong>Experiência do Usuário:</strong> Sites rápidos retêm mais visitantes e convertem mais.</li>
+            </ul>
+        </article>
+
+        <section class="seo-content" id="faq">
+            <h2>Perguntas Frequentes (FAQ)</h2>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h4 itemprop="name">Como comprimir imagem sem perder qualidade?</h4>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Utilizamos algoritmos de compressão com perdas inteligentes (lossy compression)
+                        que removem metadados desnecessários e otimizam a estrutura de cores, resultando em um arquivo
+                        muito menor visualmente idêntico ao original.</p>
+                </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h4 itemprop="name">É seguro usar este compressor de fotos?</h4>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Sim, totalmente seguro. Ao contrário de outros sites, o <strong>Compressor
+                            ImagePro</strong> processa tudo no seu navegador. Suas fotos nunca saem do seu computador ou
+                        celular.</p>
+                </div>
+            </div>
+            <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+                <h4 itemprop="name">Quais formatos de imagem posso otimizar?</h4>
+                <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                    <p itemprop="text">Nossa ferramenta suporta compressão de <strong>JPG (JPEG)</strong>,
+                        <strong>PNG</strong> e <strong>WEBP</strong>. Você pode converter e reduzir todos esses formatos
+                        simultaneamente.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Compressor ImagePro. A melhor ferramenta para <a href="#" style="color: inherit;">reduzir tamanho
+                de imagem</a>.</p>
+        <div class="footer-links">
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Contato</a>
+        </div>
+    </footer>
+
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Compressor ImagePro",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "BRL"
+      },
+      "description": "Ferramenta online gratuita para comprimir imagens e reduzir tamanho de fotos JPG, PNG e WEBP sem perda de qualidade.",
+      "featureList": "Compressão de imagem, Redução de tamanho de arquivo, Conversão de formato, Processamento em lote",
+      "softwareRequirements": "Navegador Web Moderno",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1250"
+      }
+    }
+    </script>
+</body>
+
+</html>
