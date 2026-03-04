@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Removedor de Fundo de Imagem Grátis com IA - BG Remover Pro</title>
+    <meta name="title" content="Removedor de Fundo de Imagem Grátis com IA - BG Remover Pro">
+    <meta name="description"
+        content="Remova o fundo de imagens online gratuitamente e com Inteligência Artificial. Processamento 100% no navegador. Seguro, rápido e sem marca d'água.">
+    <meta name="keywords"
+        content="remover fundo, tirar fundo de imagem, background remover, removedor de fundo ia, online gratis, imagem sem fundo, png transparente">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="author" content="BG Remover Pro">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- imgly-background-removal -->
+    <script src="https://cdn.jsdelivr.net/npm/@imgly/background-removal@1.4.3/dist/imgly-background-removal.js"></script>
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7659328690221350"
+     crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Menu Principal">
+        <a href="../index.html" class="logo" style="text-decoration:none;">
+            <i class="fa-solid fa-eraser"></i> BGRemover<span>Pro</span>
+        </a>
+        <div class="nav-links">
+            <a href="#how-to">Como funciona</a>
+            <a href="#faq">FAQ</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Remove o fundo das suas imagens com <span class="gradient-text">Inteligência Artificial</span></h1>
+            <p class="subtitle">A ferramenta mais rápida para <strong>tirar fundo de imagens</strong> e transformá-las em PNG com fundo transparente. Gratuito e 100% no seu navegador.</p>
+        </header>
+
+        <section class="upload-section" aria-label="Área de Upload">
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0"
+                aria-label="Arraste imagens ou clique para selecionar">
+                <div class="icon-container">
+                    <i class="fa-solid fa-images" aria-hidden="true"></i>
+                </div>
+                <h3>Arraste e solte sua imagem aqui</h3>
+                <p>ou</p>
+                <button class="btn-primary" id="select-files-btn">Selecionar Arquivo</button>
+                <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" hidden
+                    aria-hidden="true">
+                <p class="file-info">Suporta JPG, PNG, WEBP (Máx. recomendando: 5MB)</p>
+            </div>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;" aria-live="polite">
+            <h2>Imagem Processada</h2>
+            <div class="file-list" id="file-list">
+                <!-- Items will be added here via JS -->
+            </div>
+            <div class="actions-bar">
+                <button class="btn-ghost" id="clear-all-btn">Limpar Tudo</button>
+            </div>
+        </section>
+
+        <section class="features" id="features" aria-label="Recursos Principais">
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                <h3>Privacidade Total</h3>
+                <p>A remoção é feita com IA localmente no seu navegador. Suas fotos nunca são enviadas para a nuvem.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                <h3>Rápido e Preciso</h3>
+                <p>Nossa IA identifica com precisão os recortes e remove em segundos.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-star" aria-hidden="true"></i>
+                <h3>Gratuito</h3>
+                <p>Diferente de outros sites, você não precisa comprar créditos para baixar em alta qualidade.</p>
+            </div>
+        </section>
+
+        <!-- SEO Content Section -->
+        <article class="seo-content" id="how-to">
+            <h2>Como remover o fundo da imagem gratuitamente?</h2>
+            <p>Quer tirar o fundo de uma foto para criar montagens ou adesivos? O <strong>BG Remover Pro</strong> resolve isso rapidamente usando Inteligência Artificial:</p>
+            <ol>
+                <li><strong>Escolha sua imagem:</strong> Arraste o arquivo para a área de destaque acima.</li>
+                <li><strong>Aguarde a Mágica:</strong> O processo iniciará automaticamente e a IA separará o elemento principal do fundo. (O tempo varia conforme a potência do seu dispositivo).</li>
+                <li><strong>Baixe pronto:</strong> Clique no botão de download para pegar sua nova imagem transparente em PNG.</li>
+            </ol>
+        </article>
+
+        <section class="seo-content" id="faq">
+            <h2>Perguntas Frequentes</h2>
+            <div class="faq-item">
+                <h4>Minhas fotos vão para algum servidor?</h4>
+                <p>Não! A grande vantagem tecnológica desta ferramenta é que ela roda a Inteligência Artificial diretamente no seu navegador. Isso garante 100% de privacidade para suas imagens.</p>
+            </div>
+            <div class="faq-item">
+                <h4>Por que demorou um pouco para remover o fundo da primeira vez?</h4>
+                <p>Na primeira vez que você acessa, o seu navegador precisa fazer o download do modelo de Inteligência Artificial para funcionar offline. Nas próximas imagens o processo fica muito mais veloz!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PumpMySite Tools. Ferramenta gratuita de utilidades.</p>
+        <div class="footer-links">
+            <a href="../index.html">Voltar para a Home</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
