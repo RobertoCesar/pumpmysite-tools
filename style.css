@@ -145,6 +145,7 @@ body {
 .gradient-text {
     background: linear-gradient(135deg, #facc15 0%, #f43f5e 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -207,6 +208,11 @@ body {
 .icon-violet {
     background: rgba(139, 92, 246, 0.1);
     color: #8b5cf6;
+}
+
+.icon-pink {
+    background: rgba(236, 72, 153, 0.1);
+    color: #ec4899;
 }
 
 .icon-gray {

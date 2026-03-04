@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Removedor de Fundo Grátis - Tirar Fundo de Imagem Online</title>
+    <meta name="title" content="Removedor de Fundo Grátis - Tirar Fundo de Imagem Online">
+    <meta name="description"
+        content="Ferramenta online gratuita para remover o fundo de imagens. IA avançada que funciona direto no seu navegador. Rápido, seguro e 100% grátis.">
+    <meta name="keywords"
+        content="remover fundo de imagem, tirar fundo online, background remover, apagar fundo, foto sem fundo png, remover fundo IA">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="Portuguese">
+    <meta name="revisit-after" content="7 days">
+    <meta name="author" content="BG Remover Pro">
+
+    <!-- Fonts & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/@imgly/background-removal@1.4.5/dist/imglyRemoval.umd.min.js" defer></script>
+    <script src="script.js" defer></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7659328690221350"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <nav class="navbar" role="navigation" aria-label="Menu Principal">
+        <div class="logo">
+            <i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i> BG Remover<span>Pro</span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html" title="Voltar para ferramentas">Mais Ferramentas</a>
+            <a href="#features" title="Veja como funciona">Como funciona</a>
+            <a href="#seo-info" title="Sobre a ferramenta">Sobre</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="hero">
+            <h1>Remove o Fundo com <span class="gradient-text">Inteligência Artificial</span></h1>
+            <p class="subtitle">A ferramenta mais precisa para <strong>tirar o fundo de imagens</strong> direto no
+                navegador. Sem limites, totalmente grátis.</p>
+        </header>
+
+        <section class="upload-section" aria-label="Área de Upload">
+            <div class="drop-zone" id="drop-zone" role="button" tabindex="0"
+                aria-label="Arraste imagens ou clique para selecionar">
+                <div class="icon-container">
+                    <i class="fa-solid fa-image" aria-hidden="true"></i>
+                </div>
+                <h3>Arraste e solte a imagem aqui</h3>
+                <p>ou</p>
+                <button class="btn-primary" id="select-files-btn">Selecionar Imagem</button>
+                <input type="file" id="file-input" accept="image/png, image/jpeg, image/webp" hidden aria-hidden="true">
+                <p class="file-info">Suporta JPG, PNG, WEBP</p>
+            </div>
+
+            <div id="loading-area" style="display: none; text-align: center; margin-top: 2rem;">
+                <div class="loader">
+                    <i class="fa-solid fa-circle-notch fa-spin fa-3x" style="color: var(--primary);"></i>
+                </div>
+                <p id="loading-text" style="margin-top: 1rem; font-weight: 500;">Carregando modelo de IA (pode demorar
+                    na primeira vez)...</p>
+            </div>
+        </section>
+
+        <section class="results-section" id="results-section" style="display: none;" aria-live="polite">
+            <h2>Resultado</h2>
+            <div class="result-container"
+                style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center; margin-top: 1.5rem;">
+                <div class="image-box">
+                    <h3>Original</h3>
+                    <img id="original-image" src="" alt="Imagem original"
+                        style="max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1);">
+                </div>
+                <div class="image-box">
+                    <h3>Fundo Removido</h3>
+                    <div class="transparent-bg"
+                        style="max-width: 100%; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(135deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(135deg, transparent 75%, #ccc 75%); background-size: 20px 20px; background-position: 0 0, 10px 0, 10px -10px, 0px 10px;">
+                        <img id="result-image" src="" alt="Imagem sem fundo" style="max-width: 100%; display: block;">
+                    </div>
+                </div>
+            </div>
+            <div class="actions-bar" style="justify-content: center; margin-top: 2rem;">
+                <button class="btn-secondary" id="download-btn">
+                    <i class="fa-solid fa-download"></i> Baixar PNG Transparente
+                </button>
+                <button class="btn-ghost" id="clear-btn">Fazer Outra</button>
+            </div>
+        </section>
+
+        <section class="features" id="features" aria-label="Recursos Principais">
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                <h3>100% Seguro e Privado</h3>
+                <p>O processamento roda localmente no seu dispositivo. Nenhuma foto é enviada para servidores.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+                <h3>IA Avançada</h3>
+                <p>Utilizamos modelos de inteligência artificial de última geração para recortes perfeitos de cabelos e
+                    bordas.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <i class="fa-solid fa-money-bill-1-wave" aria-hidden="true"></i>
+                <h3>Totalmente Grátis</h3>
+                <p>Sem limites de uso, sem marcas d'água e sem restrição de resolução. Baixe imagens em alta qualidade
+                    grátis.</p>
+            </div>
+        </section>
+
+        <article class="seo-content" id="seo-info">
+            <h2>Por que usar o BG Remover Pro?</h2>
+            <p>O <strong>BG Remover Pro</strong> traz a experiência completa e poderosa remoção de fundos graças ao
+                avanço do WebAssembly e da Inteligência Artificial em navegadores. Não é mais preciso instalar softwares
+                pesados ou pagar assinaturas caras para conseguir imagens em PNG com transparecia de alta qualidade.</p>
+            <p>Com apenas um clique, você obtém resultados profissionais, ideais para criadores de conteúdo,
+                e-commerces, design de produtos e postagens de redes sociais. O melhor de tudo: suas fotos <strong>não
+                    são enviadas</strong> pela internet garantindo sua privacidade total.</p>
+        </article>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PumpMySite Tools. A melhor ferramenta para <a href="#" style="color: inherit;">remover fundo de
+                fotos</a>.</p>
+    </footer>
+
+</body>
+
+</html>
